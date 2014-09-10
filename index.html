@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Padrões de Projetos - Singleton e Iterator</title>
+        <meta name="description" content="Exposição dos padões de projeto Singleton e Iterator">
+        <meta name="author" content="Victor Feitoza">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+                <section>
+                    <h1>Singleton e Iterator</h1>
+                    <p>
+                        <small>Por <a href="http://vfeitoza.com.br">Victor Feitoza</a></small>
+                    </p>
+                    <p>
+                        Curso: Análise e Desenvolvimento de Sistemas<br />
+                        Disciplina: Arquitetura para Computação Móvel
+                    </p>
+                </section>
+                
+                <section id="topicos">
+                    <h2>Tópicos</h2>
+                    <ol>
+                        <li class="fragment"><strong>Visão geral</strong></li>
+                        <li class="fragment"><strong>Objetivos</strong></li>
+                        <li class="fragment"><strong>Estrutura</strong></li>
+                        <li class="fragment"><strong>Pequenos exemplos</strong></li>
+                        <li class="fragment"><strong>Consequencias</strong></li>
+                    </ol>
+                </section>
+
+                <!-- Padrão Singleton -->
+                <section>
+                    <section id="singleton">
+                        <h2>Singleton - Visão geral</h2>
+                        <p>
+                            O padrão Singleton garante que uma classe tenha apenas uma instância, fornecendo um ponto global de acesso a ela. 
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Singleton - Objetivos</h2>
+                        <ul>
+                            <li class="fragment">Tornar a própria classe responsável por manter o controle sobre a sua única instância.</li>
+                            <li class="fragment">A classe deve garantir que nenhuma outra instância será criada.</li>
+                            <li class="fragment">A classe deve interceptar pedidos de criação de novos objetos a serem instanciados.</li>
+                            <li class="fragment">A classe deve fornecer um meio para que objetos de outras classes acessem a sua única instância. </li>
+                            <li class="fragment">Deve fornecer um ponto de acesso único à sua única instância.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Singleton - Estrutura</h2>
+                        <p>
+                            <img src="images/singleton/estrutura.jpg" width="840" height="464" alt="Estrutura padrão" >
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Singleton - Exemplos</h2>
+                        <p>
+                            <img src="images/singleton/estrutura.jpg" width="840" height="464" alt="Estrutura padrão" >
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Singleton - Consequências</h2>
+                        <ul>
+                            <li class="fragment">Permite controlar o número de instâncias que a aplicação utiliza.</li>
+                            <li class="fragment">Mais flexível do que operações de classe. </li>
+                        </ul>
+
+                        <aside class="notes">
+                            Uma outra maneira de empacotar as funcionalidades de um Singleton é utilizando operações de classe. 
+                            Porém, esta técnica torna difícil mudar o projeto para permitir mais de uma instância da classe (menor flexibilidade) e não permite o polimorfismo.
+                        </aside>                    
+                    </section>
+                </section>
+                <!-- / Padrão Singleton -->
+
+                <!-- Padrão Iterator -->
+                <section>
+                    <section id="iterator">
+                        <h2>Iterator - Visão geral</h2>
+                        <p>
+                            Iteração com todos os elementos independente da estrutura utilizada, fornecendo acesso genérico aos elementos.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Iterator - Objetivos</h2>
+                        <ul>
+                            <li class="fragment">Padronizar a iteração sobre os elementos de agregados.</li>
+                            <li class="fragment">Permitir modificações na estrutura interna do agregado sem afetar quem faz uso dele apenas para iteração.</li>
+                            <li class="fragment">Prover interface única de iteração sobre agregados.</li>
+                            <li class="fragment">Permitir a troca do tipo do agregado sem afetar quem faz uso dele apenas para iteração.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Iterator - Estrutura</h2>
+                        <p>
+                            <img src="images/iterator/estrutura.jpg" width="840" height="464" alt="Estrutura padrão" >
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Iterator - Exemplos</h2>
+                        <p>
+                            <img src="images/iterator/estrutura.jpg" width="840" height="464" alt="Estrutura padrão" >
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Iterator - Consequencias</h2>
+                        <ul class="st">
+                            <li class="fragment">Generalidade na iteração sobre os elementos de um agregado.</li>
+                            <li class="fragment">Troca da implementação do agregado sem afetar quem faz iteração sobre seus elementos.</li>
+                            <li class="fragment">Possibilidade de realizar múltiplas iterações concorrentes sobre um agregado.</li>
+                        </ul>
+                        
+                        <aside class="notes">
+                            Para cada passo na iteração, o usuário pode realizar operações sobre o elemento.
+                        </aside>                    
+                    </section>
+                </section>
+                <!-- / Padrão Iterator -->
+
+                <section data-background="images/duvidas.png" data-background-size="600px">
+                    <!-- <h1>Dúvidas</h1> -->
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+                        // Full list of configuration options available here:
+                        // https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+                            controls: true,
+                            progress: true,
+                            history: true,
+                            center: true,
+                            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                            // Parallax scrolling
+                            parallaxBackgroundImage: 'images/paisagem.jpg',
+                            parallaxBackgroundSize: '2100px 900px',
+
+                            // Optional libraries used to extend on reveal.js
+                            dependencies: [
+                                {src: 'lib/js/classList.js', condition: function() {
+                                        return !document.body.classList;
+                                    }},
+                                {src: 'plugin/markdown/marked.js', condition: function() {
+                                        return !!document.querySelector('[data-markdown]');
+                                    }},
+                                {src: 'plugin/markdown/markdown.js', condition: function() {
+                                        return !!document.querySelector('[data-markdown]');
+                                    }},
+                                {src: 'plugin/highlight/highlight.js', async: true, callback: function() {
+                                        hljs.initHighlightingOnLoad();
+                                    }},
+                                {src: 'plugin/zoom-js/zoom.js', async: true, condition: function() {
+                                        return !!document.body.classList;
+                                    }},
+                                {src: 'plugin/notes/notes.js', async: true, condition: function() {
+                                        return !!document.body.classList;
+                                    }}
+                            ]
+                        });
+
+        </script>
+
+    </body>
+</html>
